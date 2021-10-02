@@ -81,6 +81,7 @@ footer {
       width: 500px;
       padding: 20px;
       position: absolute;
+      /* this absolute position takes the form out side the flow of the document and causes the left side to run into the form when the left side has no css style */
       bottom: 120px;
       right: 140px;
       border-style: solid;
