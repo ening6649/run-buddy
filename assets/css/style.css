@@ -11,12 +11,24 @@ header {
     justify-content: space-between;
     /* allow items to go to the next line when they dont fit */
     flex-wrap: wrap;
+    /* sticky header. top:0 tells the browser where to stick the element */
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    /* -webkit- is a vendor pre-fix to support it in certain browsers . the pre-fix line should always be above the standardized lines*/
+    background-image: url("../images/hero-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    /* places the image relative to the viewport instead of the element  */
+    background-attachment: fixed;
+    background-position: 80%;
   }
   header h1 {
     font-weight: bold;
     font-size: 36px;
     color: #fce138;
     margin: 0;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     /* display:inline; */
   }
   
@@ -46,6 +58,7 @@ header {
     padding: 10px 15px;
     font-weight: lighter;
     font-size: 1.55vw;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     /* font-size: 22px; */
   }
 
@@ -98,6 +111,9 @@ footer {
     flex-wrap: wrap;
     /* align-item default value is stretch, which means all flex children will grow to the size of the tallest one */
     align-items: flex-start;
+    /* as above in header , places the image relative to the viewport instead of the element  */
+    background-attachment: fixed;
+    background-position: 80%;
   }
   /* Hero Style End */ 
 
@@ -114,6 +130,7 @@ footer {
     font-style: italic;
     font-size: 55px;
     color: #fce138;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
 
   .hero-form {
@@ -130,6 +147,9 @@ footer {
       border-color: #024e76;
       width: 40%;
       margin: 3.5%;
+      box-shadow: 0 0 10px rgba(252, 225, 56, 0.8);
+      /* adds rounded corner. move 15 px in on the x and y axis */
+      border-radius: 15px;
     /*shorthand border: solid 3px #024e76;*/
   }
   .hero-form h3 {
@@ -139,6 +159,7 @@ footer {
   }
   .hero-form p {
     margin:5px 0 15px 0;
+
   }
 
   .form-input {
@@ -149,6 +170,7 @@ footer {
       color:#024e76;
       width: 100%;
       margin-bottom: 15px;
+      border-radius: 10px;
   }
 
   .hero-form label {
@@ -161,6 +183,7 @@ footer {
     border: none;
     padding: 10px 20px;
     font-size: 16px;
+    border-radius: 10px;
   }
   /* .intro {
     text-align: center;
@@ -408,6 +431,7 @@ footer {
   width: 100%;
   margin-bottom: 15px;
   margin-top: 5px;
+  border-radius: 10px;
 }
 
 .contact-form button {
@@ -418,6 +442,7 @@ footer {
   text-align: center;
   padding: 15px 0;
   font-size: 16px;
+  border-radius: 10px;
 
 }
 
@@ -449,6 +474,8 @@ footer {
   header {
     padding-bottom: 0;
     justify-content: center;
+    /* this should change all screen size below 980 to display relative header position instead of fixed*/
+    position: relative;
   }
 
   header h1 {
@@ -552,5 +579,14 @@ footer {
   .contact-form {
     order: 3;
   }
-
 }
+/*  
+.some-class {
+  text-shadow: 5px 10px 15px black;
+  box-shadow: 5px 10px 15px black;
+}
+horizontal offset 5, vertical offset 10, radius of shawdow blur 15 . postive number start at top left. negative from bottom right
+RGB = red/green/blue blend rgb(0,0,0) = black rgb(255,255,255)= white 
+rgba = alpha , transparency value between 0.0 and 1.0 , 0 is fully opaque , 0 fully transparent. 
+box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.25);
+*/
